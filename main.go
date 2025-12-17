@@ -5,14 +5,15 @@ import (
     "net/http"
     "os"
     "patchmango/handlers"
+    "patchmango/config"
 )
 
 func main() {
-    http.HandleFunc("/patchmango/api/versions", handlers.GetVersions)
-    http.HandleFunc("/patchmango/api/current_version", handlers.GetCurrentVersion)
-    http.HandleFunc("/patchmango/api/get_file", handlers.GetFile)
+    http.HandleFunc("/patchmango/api/versions", handlers.CheckAuthorization(handlers.GetVersions))
+    http.HandleFunc("/patchmango/api/current_version", handlers.CheckAuthorization(handlers.GetCurrentVersion))
+    http.HandleFunc("/patchmango/api/get_file", handlers.CheckAuthorization(handlers.GetFile))
     
-    port := "8080"
+    port := config.Port
     if p := os.Getenv("PORT"); p != "" {
         port = p
     }
