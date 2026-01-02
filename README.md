@@ -18,7 +18,7 @@ GET  /patchmango/api/get_file         - Download a file
 ./patchmango -port=8080 -verbose</p>
 ### From the Remote Device...
 ### Make a request to view all Versions:
-curl -H "Authorization: Bearer your-secret-token" \</p>
+curl -H "Authorization: Bearer your-secret-token" \
 "http://localhost:8080/patchmango/api/versions"
 ### Make a request to view the Current Version:
 curl -H "Authorization: Bearer your-secret-token" \
