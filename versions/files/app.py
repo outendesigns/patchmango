@@ -1,1 +1,0 @@
-print("Application v1.0.0")

@@ -1,12 +1,12 @@
 {
   "versions": [
     {
-      "version": "1.7.9",
+      "version": "1.0.0",
       "release_date": "2024-12-11",
-      "files": ["update_1.0.0.sh", "test1.py"]
+      "files": ["update_1.0.0.sh"]
     },
     {
-      "version": "1.7.10",
+      "version": "1.0.1",
       "release_date": "2024-12-12",
       "files": ["update_1.0.1.sh"]
     }
