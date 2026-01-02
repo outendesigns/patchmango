@@ -6,6 +6,9 @@ Copyright (c) 2025 Eric R Outen
 
 This serves as a framework for an Embedded Device Updater using Go as a server-side API.
 
+### Stylized API Doc Here:
+[Link text](https://outendesigns.github.io/patchmango/docs/api-docs.html)
+
 ## Usage:
 ./patchmango [OPTIONS]
 ## Options:
