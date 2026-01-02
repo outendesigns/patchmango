@@ -26,6 +26,9 @@ func GetOutboundIP() net.IP {
 func updateHelpUsage() {
     flag.Usage = func() {
         fmt.Fprintf(os.Stderr, "PatchMango API Server\n\n")
+        fmt.Fprintf(os.Stderr, "  MIT License\n")
+        fmt.Fprintf(os.Stderr, "  Copyright (c) 2025 Eric R Outen\n\n")
+        fmt.Fprintf(os.Stderr, "This serves as a framework for an Embedded Device Updater using Go as a server-side API.\n\n")
         fmt.Fprintf(os.Stderr, "Usage: %s [OPTIONS]\n\n", os.Args[0])
         fmt.Fprintf(os.Stderr, "Options:\n")
         flag.PrintDefaults()
@@ -38,9 +41,15 @@ func updateHelpUsage() {
         fmt.Fprintf(os.Stderr, "\nExample Usage:\n")
         fmt.Fprintf(os.Stderr, "  Start server:\n")
         fmt.Fprintf(os.Stderr, "    %s -port=8080 -verbose\n\n", os.Args[0])
-        fmt.Fprintf(os.Stderr, "  Make request:\n")
+        fmt.Fprintf(os.Stderr, "  Make a request to view all Versions:\n")
         fmt.Fprintf(os.Stderr, "    curl -H \"Authorization: Bearer your-secret-token\" \\\n")
-        fmt.Fprintf(os.Stderr, "         \"http://localhost:8080/patchmango/api/versions\"\n")
+        fmt.Fprintf(os.Stderr, "         \"http://localhost:8080/patchmango/api/versions\"\n\n")
+        fmt.Fprintf(os.Stderr, "  Make a request to view the Current Version:\n")
+        fmt.Fprintf(os.Stderr, "    curl -H \"Authorization: Bearer your-secret-token\" \\\n")
+        fmt.Fprintf(os.Stderr, "         \"http://localhost:8080/patchmango/api/current_version\"\n\n")
+        fmt.Fprintf(os.Stderr, "  Download and Execute a File:\n")
+        fmt.Fprintf(os.Stderr, "    curl -H \"Authorization: Bearer your-secret-token\" \\\n")
+        fmt.Fprintf(os.Stderr, "         \"http://localhost:8080/patchmango/api/get_file?file=filename\" | bash\n\n")
     }
 }
 

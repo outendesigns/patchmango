@@ -1,1 +1,60 @@
-<h1>api docs</h1>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>PatchMango API</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="content">
+		<h1>[PatchMango API Server]</h1>
+		<br>
+<pre>
+ __________________________ 
+|  ______________________  |
+| |                      | |
+| |                      | |
+| | patchmango % _       | |
+| |                      | |
+| |                      | |
+| |______________________| |
+|__________________________|
+         |        |          
+         |        |
+        |__________|
+</pre>
+		<br>
+  		<p>MIT License</p>
+  		<p>Copyright (c) 2025 Eric R Outen</p>
+		<p>This serves as a framework for an Embedded Device Updater using Go as a server-side API.</p>
+		<h2>Usage:</h2>
+		<p>./patchmango [OPTIONS]</p>
+		<h2>Options:</h2>
+  		<h3>-port int</h3>
+    	<p>port to listen on (default 8080)</p>
+  		<h3>-verbose</h3>
+    	<p>enable verbose output</p>
+		<h2>API Endpoints:</h2>
+  		<p>GET  /patchmango/api/versions         - List all available versions<p>
+  		<p>GET  /patchmango/api/current_version  - Get the current version</p>
+  		<p>GET  /patchmango/api/get_file         - Download a file</p>
+		<h2>Example Usage:</h2>
+	  	<h3>Start server:</h3>
+    	<p>./patchmango -port=8080 -verbose</p>
+  		<h3>From the Remote Device...</h3>
+  		<h3>Make a request to view all Versions:</h3>
+    	<p>curl -H "Authorization: Bearer your-secret-token" \</p>
+        <p>"http://localhost:8080/patchmango/api/versions"</p>
+  		<h3>Make a request to view the Current Version:</h3>
+    	<p>curl -H "Authorization: Bearer your-secret-token" \</p>
+        <p>"http://localhost:8080/patchmango/api/current_version"</p>
+  		<h3>Download and Execute a File:</h3>
+    	<p>curl -H "Authorization: Bearer your-secret-token" \</p>
+        <p>"http://localhost:8080/patchmango/api/get_file?file=filename" | bash</p>
+	</div>
+</body>
+</html>
